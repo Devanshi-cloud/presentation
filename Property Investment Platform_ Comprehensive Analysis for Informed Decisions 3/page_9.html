@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feature 3: Advanced Location Analysis Tools</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 798px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 798px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .map-container {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Feature 3: Advanced Location Analysis Tools</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+<p class="text-gray-200 text-lg max-w-3xl mb-8">
+                Powerful location intelligence to identify high-potential investment areas and predict future growth
+            </p>
+</div>
+<!-- Mock Map Visualization -->
+<div class="flex flex-wrap relative z-10">
+<div class="w-1/2 pr-4">
+<div class="map-container rounded-lg p-2 mb-4">
+<div class="h-56 w-full relative rounded overflow-hidden" id="map-visualization">
+<!-- D3.js will render map here -->
+</div>
+</div>
+<!-- Customizable Scoring -->
+<div class="feature-card rounded-lg p-5 border-l-4 border-green-500">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-green-500 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-star text-yellow-400 text-xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Customizable Location Scoring</h3>
+</div>
+<ul class="text-gray-200 space-y-1">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Proprietary scoring algorithm with weighted parameters</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Side-by-side comparison of multiple locations</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Personalized investment suitability metrics</li>
+</ul>
+</div>
+</div>
+<div class="w-1/2 pl-4">
+<div class="grid grid-cols-2 gap-4">
+<!-- Interactive Geospatial Mapping -->
+<div class="feature-card rounded-lg p-4">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-green-500 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-map-marked-alt text-orange-400 text-xl"></i>
+</div>
+<h3 class="text-white text-lg font-semibold">Interactive Mapping</h3>
+</div>
+<ul class="text-gray-200 text-sm space-y-1">
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>RERA project boundaries</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Amenity &amp; infrastructure overlays</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Property value heatmaps</li>
+</ul>
+</div>
+<!-- Location Profiling -->
+<div class="feature-card rounded-lg p-4">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-green-500 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-user-chart text-blue-400 text-xl"></i>
+</div>
+<h3 class="text-white text-lg font-semibold">Location Profiling</h3>
+</div>
+<ul class="text-gray-200 text-sm space-y-1">
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Demographic analysis</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Amenity &amp; infrastructure scores</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Connectivity assessment</li>
+</ul>
+</div>
+<!-- Market Dynamics -->
+<div class="feature-card rounded-lg p-4">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-green-500 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-chart-bar text-purple-400 text-xl"></i>
+</div>
+<h3 class="text-white text-lg font-semibold">Market Dynamics</h3>
+</div>
+<ul class="text-gray-200 text-sm space-y-1">
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Hyperlocal price analysis</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Supply &amp; demand indicators</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Rental yield tracking</li>
+</ul>
+</div>
+<!-- Predictive Analytics -->
+<div class="feature-card rounded-lg p-4">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-green-500 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-crystal-ball text-cyan-400 text-xl"></i>
+</div>
+<h3 class="text-white text-lg font-semibold">Predictive Analytics</h3>
+</div>
+<ul class="text-gray-200 text-sm space-y-1">
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Value appreciation forecasts</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Growth corridor identification</li>
+<li><i class="fas fa-angle-right text-green-400 mr-1"></i>Undervalued area detection</li>
+</ul>
+</div>
+</div>
+<!-- Quote -->
+<div class="bg-white bg-opacity-10 rounded-lg p-4 mt-4 border-l-4 border-yellow-500">
+<p class="text-white italic">
+<i class="fas fa-quote-left text-yellow-400 mr-2 opacity-50"></i>
+                        Location analytics contribute to streamlined market analysis and increased transparency, minimizing disputes and facilitating smarter decision-making.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Key Benefit -->
+<div class="bg-green-800 bg-opacity-30 p-4 rounded-lg mt-6 max-w-4xl mx-auto relative z-10 border border-green-700">
+<div class="flex items-center">
+<i class="fas fa-lightbulb text-yellow-400 text-2xl mr-4"></i>
+<p class="text-white text-lg">
+<span class="font-bold">Key Benefit:</span> 
+                    GIS-driven valuations foster trust and efficiency in the real estate ecosystem by aligning valuations with current market realities.
+                </p>
+</div>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            9/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for mock map
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('map-visualization').clientWidth;
+            const height = document.getElementById('map-visualization').clientHeight;
+            
+            const svg = d3.select('#map-visualization')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+                
+            // Create background grid for map
+            const gridSize = 15;
+            for (let x = 0; x < width; x += gridSize) {
+                for (let y = 0; y < height; y += gridSize) {
+                    svg.append('rect')
+                        .attr('x', x)
+                        .attr('y', y)
+                        .attr('width', gridSize - 1)
+                        .attr('height', gridSize - 1)
+                        .attr('fill', 'rgba(255,255,255,0.05)');
+                }
+            }
+            
+            // Create mock roads
+            const roads = [
+                {x1: 20, y1: height/2, x2: width-20, y2: height/2},
+                {x1: width/3, y1: 20, x2: width/3, y2: height-20},
+                {x1: 2*width/3, y1: 20, x2: 2*width/3, y2: height-20},
+                {x1: 20, y1: height/3, x2: width-20, y2: height/3},
+                {x1: 20, y1: 2*height/3, x2: width-20, y2: 2*height/3}
+            ];
+            
+            roads.forEach(road => {
+                svg.append('line')
+                    .attr('x1', road.x1)
+                    .attr('y1', road.y1)
+                    .attr('x2', road.x2)
+                    .attr('y2', road.y2)
+                    .attr('stroke', 'rgba(255,255,255,0.3)')
+                    .attr('stroke-width', 3);
+            });
+            
+            // Create property clusters
+            const clusters = [
+                {cx: width/4, cy: height/4, r: 30, value: 'high'},
+                {cx: 3*width/4, cy: height/4, r: 25, value: 'medium'},
+                {cx: width/4, cy: 3*height/4, r: 20, value: 'low'},
+                {cx: 2*width/3, cy: 2*height/3, r: 35, value: 'high'}
+            ];
+            
+            const colorScale = d3.scaleOrdinal()
+                .domain(['high', 'medium', 'low'])
+                .range(['rgba(34,139,34,0.7)', 'rgba(255,165,0,0.6)', 'rgba(100,149,237,0.5)']);
+            
+            clusters.forEach(cluster => {
+                svg.append('circle')
+                    .attr('cx', cluster.cx)
+                    .attr('cy', cluster.cy)
+                    .attr('r', cluster.r)
+                    .attr('fill', colorScale(cluster.value))
+                    .attr('stroke', 'white')
+                    .attr('stroke-width', 1)
+                    .attr('stroke-opacity', 0.5);
+            });
+            
+            // Add legend
+            const legend = svg.append('g')
+                .attr('transform', `translate(${width - 100}, ${height - 80})`);
+                
+            const legendItems = [
+                {label: 'High Value', color: 'rgba(34,139,34,0.7)'},
+                {label: 'Medium', color: 'rgba(255,165,0,0.6)'},
+                {label: 'Emerging', color: 'rgba(100,149,237,0.5)'}
+            ];
+            
+            legendItems.forEach((item, i) => {
+                legend.append('rect')
+                    .attr('x', 0)
+                    .attr('y', i * 20)
+                    .attr('width', 10)
+                    .attr('height', 10)
+                    .attr('fill', item.color);
+                    
+                legend.append('text')
+                    .attr('x', 15)
+                    .attr('y', i * 20 + 9)
+                    .text(item.label)
+                    .attr('font-size', '8px')
+                    .attr('fill', 'white');
+            });
+            
+            // Add a mock RERA project boundary
+            const projectPoints = [
+                [width/3-40, height/3-30],
+                [width/3+40, height/3-30],
+                [width/3+40, height/3+30],
+                [width/3-40, height/3+30]
+            ];
+            
+            const lineFunction = d3.line()
+                .x(d => d[0])
+                .y(d => d[1]);
+                
+            svg.append('path')
+                .attr('d', lineFunction(projectPoints))
+                .attr('stroke', '#FFA500')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5')
+                .attr('fill', 'none');
+                
+            svg.append('text')
+                .attr('x', width/3)
+                .attr('y', height/3)
+                .text('RERA Project')
+                .attr('text-anchor', 'middle')
+                .attr('font-size', '10px')
+                .attr('fill', 'white');
+        });
+    </script>
+
+</body></html>

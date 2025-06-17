@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Solution: Platform Overview</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 1004px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 1004px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .solution-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .feature-icon {
+            color: #FFA500;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .platform-circle {
+            background: radial-gradient(circle, #228B22 0%, #1a6b1a 100%);
+            box-shadow: 0 0 20px rgba(34, 139, 34, 0.4);
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Our Solution: Platform Overview</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+<p class="text-gray-200 text-lg max-w-3xl mb-8">A comprehensive platform designed to empower individual investors with the tools and insights needed for informed property investment decisions.</p>
+</div>
+<!-- Platform visualization with D3 -->
+<div class="relative z-10 mb-8 flex justify-center">
+<div class="h-96 w-full max-w-4xl" id="platform-visual"></div>
+</div>
+<!-- Core Features -->
+<div class="grid grid-cols-3 gap-6 mb-8 relative z-10 mt-4">
+<!-- Investment Reports -->
+<div class="solution-card rounded-lg p-6 border-t-4 border-green-500">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-file-invoice-dollar feature-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Detailed Investment Reports</h3>
+</div>
+<p class="text-gray-200">Comprehensive property analysis with financial metrics, market comparisons, and risk assessment to guide investment decisions.</p>
+</div>
+<!-- RERA Data Integration -->
+<div class="solution-card rounded-lg p-6 border-t-4 border-green-500">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-database feature-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">RERA Data Integration</h3>
+</div>
+<p class="text-gray-200">Innovative access to critical RERA information through multiple channels, ensuring compliance verification and project legitimacy.</p>
+</div>
+<!-- Location Analysis -->
+<div class="solution-card rounded-lg p-6 border-t-4 border-green-500">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-map-marked-alt feature-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Location Analysis Tools</h3>
+</div>
+<p class="text-gray-200">Advanced geospatial mapping, demographic insights, and predictive analytics to identify high-potential investment areas.</p>
+</div>
+</div>
+<!-- Bottom summary -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10">
+<p class="text-white text-center text-lg">
+<i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                Our platform transforms complex real estate data into actionable insights, addressing the fragmentation, transparency, and complexity challenges of the Indian property market.
+            </p>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            6/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for platform overview
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('platform-visual').clientWidth;
+            const height = document.getElementById('platform-visual').clientHeight;
+            
+            const svg = d3.select('#platform-visual')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+                
+            // Center platform hub
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            // Platform components
+            const components = [
+                { name: "Investment Reports", icon: "fa-file-invoice-dollar", angle: -Math.PI/6 },
+                { name: "RERA Data", icon: "fa-database", angle: Math.PI/2 },
+                { name: "Location Analysis", icon: "fa-map-marked-alt", angle: Math.PI + Math.PI/6 }
+            ];
+            
+            // Draw connecting lines
+            components.forEach(comp => {
+                const radius = 120;
+                const x2 = centerX + radius * Math.cos(comp.angle);
+                const y2 = centerY + radius * Math.sin(comp.angle);
+                
+                // Draw pulsing connection line
+                svg.append('line')
+                    .attr('x1', centerX)
+                    .attr('y1', centerY)
+                    .attr('x2', x2)
+                    .attr('y2', y2)
+                    .attr('stroke', '#228B22')
+                    .attr('stroke-width', 3)
+                    .attr('stroke-dasharray', '5,5')
+                    .attr('opacity', 0.7);
+                    
+                // Add feature circles
+                const featureCircle = svg.append('circle')
+                    .attr('cx', x2)
+                    .attr('cy', y2)
+                    .attr('r', 40)
+                    .attr('fill', 'rgba(255, 255, 255, 0.1)')
+                    .attr('stroke', '#FFA500')
+                    .attr('stroke-width', 2);
+                    
+                // Add icons to feature circles
+                svg.append('foreignObject')
+                    .attr('x', x2 - 20)
+                    .attr('y', y2 - 20)
+                    .attr('width', 40)
+                    .attr('height', 40)
+                    .html(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                            <i class="fas ${comp.icon}" style="color: #FFA500; font-size: 20px;"></i>
+                           </div>`);
+                
+                // Add feature labels
+                svg.append('text')
+                    .attr('x', x2)
+                    .attr('y', y2 + 60)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', 'white')
+                    .attr('font-size', '14px')
+                    .text(comp.name);
+                    
+                // Add small data points flowing along the lines
+                for (let i = 0; i < 3; i++) {
+                    const dot = svg.append('circle')
+                        .attr('r', 3)
+                        .attr('fill', '#FFA500')
+                        .attr('opacity', 0.7);
+                        
+                    animateDot(dot, centerX, centerY, x2, y2, i * 1000);
+                }
+            });
+            
+            // Platform center hub
+            svg.append('circle')
+                .attr('cx', centerX)
+                .attr('cy', centerY)
+                .attr('r', 50)
+                .attr('class', 'platform-circle');
+                
+            svg.append('foreignObject')
+                .attr('x', centerX - 25)
+                .attr('y', centerY - 25)
+                .attr('width', 50)
+                .attr('height', 50)
+                .html(`<div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                        <i class="fas fa-home" style="color: white; font-size: 25px;"></i>
+                       </div>`);
+                       
+            svg.append('text')
+                .attr('x', centerX)
+                .attr('y', centerY + 75)
+                .attr('text-anchor', 'middle')
+                .attr('fill', 'white')
+                .attr('font-size', '16px')
+                .attr('font-weight', 'bold')
+                .text('PropAnalytics Platform');
+                
+            // Function to animate dots along connection lines
+            function animateDot(dot, x1, y1, x2, y2, delay) {
+                function repeatAnimation() {
+                    dot.attr('cx', x1)
+                       .attr('cy', y1)
+                       .attr('opacity', 0.9)
+                       .transition()
+                       .duration(2000)
+                       .attr('cx', x2)
+                       .attr('cy', y2)
+                       .attr('opacity', 0.3)
+                       .transition()
+                       .duration(0)
+                       .delay(delay)
+                       .on('end', repeatAnimation);
+                }
+                
+                setTimeout(repeatAnimation, delay);
+            }
+        });
+    </script>
+
+</body></html>

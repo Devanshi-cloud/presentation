@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technology Infrastructure</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 1032px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 1032px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .tech-layer {
+            border-left: 4px solid #228B22;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        .connector {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+        .vertical-connector {
+            width: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .layer-indicator {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #228B22;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Technology Infrastructure</h1>
+<div class="accent-line h-1 w-32 mb-4"></div>
+<p class="text-gray-200 text-lg mb-6 max-w-3xl">Our platform is built on a modern, scalable architecture designed to handle complex data integration, advanced analytics, and deliver a seamless user experience.</p>
+</div>
+<!-- Technology Stack Architecture -->
+<div class="relative z-10 flex flex-col space-y-4">
+<!-- Layer 4: Infrastructure &amp; DevOps -->
+<div class="tech-layer rounded-lg p-4 relative">
+<div class="flex items-center mb-3">
+<div class="layer-indicator mr-4">4</div>
+<h3 class="text-white text-xl font-semibold">Infrastructure &amp; DevOps</h3>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="tech-item p-3 flex items-center">
+<i class="fab fa-aws text-yellow-400 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Cloud Platform</h4>
+<p class="text-gray-300 text-sm">AWS / GCP / Azure</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fab fa-docker text-blue-400 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Containerization</h4>
+<p class="text-gray-300 text-sm">Docker &amp; Kubernetes</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-code-branch text-orange-400 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">CI/CD</h4>
+<p class="text-gray-300 text-sm">Jenkins / GitLab CI</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Layer 3: Presentation Layer -->
+<div class="tech-layer rounded-lg p-4 relative">
+<div class="flex items-center mb-3">
+<div class="layer-indicator mr-4">3</div>
+<h3 class="text-white text-xl font-semibold">Presentation Layer</h3>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="tech-item p-3 flex items-center">
+<i class="fab fa-react text-blue-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Web Frontend</h4>
+<p class="text-gray-300 text-sm">React / Vue.js</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fab fa-node-js text-green-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Web Backend</h4>
+<p class="text-gray-300 text-sm">Node.js / Python</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-chart-bar text-purple-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Data Visualization</h4>
+<p class="text-gray-300 text-sm">D3.js / Chart.js</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Layer 2: Analytics &amp; Business Logic Layer -->
+<div class="tech-layer rounded-lg p-4 relative">
+<div class="flex items-center mb-3">
+<div class="layer-indicator mr-4">2</div>
+<h3 class="text-white text-xl font-semibold">Analytics &amp; Business Logic Layer</h3>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="tech-item p-3 flex items-center">
+<i class="fab fa-python text-yellow-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Core Analytics</h4>
+<p class="text-gray-300 text-sm">Python, Pandas, NumPy</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-brain text-pink-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">ML Models</h4>
+<p class="text-gray-300 text-sm">Scikit-learn</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-map-marked-alt text-green-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Geospatial Analysis</h4>
+<p class="text-gray-300 text-sm">GeoPandas, PostGIS</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-calculator text-blue-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Financial Modules</h4>
+<p class="text-gray-300 text-sm">Custom algorithms</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Layer 1: Data Integration Layer -->
+<div class="tech-layer rounded-lg p-4 relative">
+<div class="flex items-center mb-3">
+<div class="layer-indicator mr-4">1</div>
+<h3 class="text-white text-xl font-semibold">Data Integration Layer</h3>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-spider text-red-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Data Ingestion</h4>
+<p class="text-gray-300 text-sm">Scrapy, BeautifulSoup, Selenium</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-exchange-alt text-yellow-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">ETL Processes</h4>
+<p class="text-gray-300 text-sm">Apache NiFi, Python</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-database text-blue-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Databases</h4>
+<p class="text-gray-300 text-sm">PostgreSQL, MongoDB</p>
+</div>
+</div>
+<div class="tech-item p-3 flex items-center">
+<i class="fas fa-warehouse text-purple-300 text-2xl mr-3"></i>
+<div>
+<h4 class="text-white font-medium">Data Warehouse</h4>
+<p class="text-gray-300 text-sm">Redshift, BigQuery</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Key benefits -->
+<div class="mt-6 bg-white bg-opacity-10 p-4 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10">
+<div class="grid grid-cols-3 gap-4 text-center">
+<div>
+<i class="fas fa-expand-arrows-alt text-green-400 text-2xl mb-2"></i>
+<h4 class="text-white font-medium">Scalable Architecture</h4>
+<p class="text-gray-300 text-sm">Designed to grow with user base</p>
+</div>
+<div>
+<i class="fas fa-shield-alt text-green-400 text-2xl mb-2"></i>
+<h4 class="text-white font-medium">Secure &amp; Reliable</h4>
+<p class="text-gray-300 text-sm">Enterprise-grade security measures</p>
+</div>
+<div>
+<i class="fas fa-bolt text-green-400 text-2xl mb-2"></i>
+<h4 class="text-white font-medium">High Performance</h4>
+<p class="text-gray-300 text-sm">Optimized for fast data processing</p>
+</div>
+</div>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            13/16
+        </div>
+</div>
+
+</body></html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Market Opportunity: Size and Growth</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 852px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 852px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .market-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-left: 4px solid #228B22;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        .tooltip {
+            position: absolute;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 12px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Market Opportunity: Size and Growth</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+</div>
+<!-- Market overview text -->
+<div class="text-gray-200 mb-6 max-w-4xl relative z-10">
+<p class="text-lg">The Indian real estate and PropTech markets are experiencing substantial growth, creating a fertile environment for innovative property investment solutions.</p>
+</div>
+<!-- Main content area with charts -->
+<div class="grid grid-cols-2 gap-6 mb-6 relative z-10">
+<!-- Real Estate Market Growth -->
+<div class="chart-container p-4">
+<h3 class="text-white text-xl font-semibold mb-2 flex items-center">
+<i class="fas fa-city text-green-400 mr-3"></i>
+                    Real Estate Market Growth
+                </h3>
+<div class="h-48 w-full" id="real-estate-chart"></div>
+<div class="flex justify-between items-center mt-3">
+<div>
+<p class="text-gray-300 text-sm">2025</p>
+<p class="text-white font-bold">$332.85B</p>
+</div>
+<div class="text-center">
+<p class="text-yellow-400 font-bold">CAGR 24%</p>
+</div>
+<div class="text-right">
+<p class="text-gray-300 text-sm">2030 (Projected)</p>
+<p class="text-white font-bold">$985.80B</p>
+</div>
+</div>
+</div>
+<!-- PropTech Market Growth -->
+<div class="chart-container p-4">
+<h3 class="text-white text-xl font-semibold mb-2 flex items-center">
+<i class="fas fa-laptop-code text-green-400 mr-3"></i>
+                    PropTech Market Growth
+                </h3>
+<div class="h-48 w-full" id="proptech-chart"></div>
+<div class="grid grid-cols-2 gap-4 mt-3">
+<div class="bg-white bg-opacity-10 p-2 rounded-lg">
+<p class="text-gray-300 text-sm">Forecast 1</p>
+<p class="text-white text-sm">$1.2B (2024) → $3.6B (2033)</p>
+<p class="text-yellow-400 font-bold">CAGR 13.30%</p>
+</div>
+<div class="bg-white bg-opacity-10 p-2 rounded-lg">
+<p class="text-gray-300 text-sm">Forecast 2</p>
+<p class="text-white text-sm">$1.91B (2023) → $14B (2035)</p>
+<p class="text-yellow-400 font-bold">CAGR 16.96%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RE Software Market -->
+<div class="market-card rounded-lg p-5 mb-6 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-desktop text-yellow-400 text-2xl"></i>
+</div>
+<div>
+<h3 class="text-white text-xl font-semibold">Real Estate Software Market</h3>
+<p class="text-gray-300">Growing demand for specialized software solutions</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="text-center mr-6">
+<p class="text-gray-300 text-sm">2023</p>
+<p class="text-white font-bold">$481.2M</p>
+</div>
+<div class="text-center mr-6">
+<p class="text-yellow-400 font-bold">CAGR</p>
+<p class="text-white font-bold">13.5%</p>
+</div>
+<div class="text-center">
+<p class="text-gray-300 text-sm">2030 (Projected)</p>
+<p class="text-white font-bold">$1,167.0M</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Market opportunity summary -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10">
+<p class="text-white text-center text-lg">
+<i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                This significant market growth, combined with increasing technology adoption in real estate transactions, creates an ideal environment for our platform that centralizes RERA-verified data for investment decision-making.
+            </p>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            11/16
+        </div>
+</div>
+<script>
+        // D3.js visualizations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Real Estate Market Growth Chart
+            const reData = [
+                {year: 2025, value: 332.85, label: "$332.85B"},
+                {year: 2030, value: 985.80, label: "$985.80B"}
+            ];
+            
+            const reWidth = document.getElementById('real-estate-chart').clientWidth;
+            const reHeight = document.getElementById('real-estate-chart').clientHeight;
+            const reMargin = {top: 20, right: 30, bottom: 30, left: 60};
+            const reChartWidth = reWidth - reMargin.left - reMargin.right;
+            const reChartHeight = reHeight - reMargin.top - reMargin.bottom;
+            
+            const reSvg = d3.select('#real-estate-chart')
+                .append('svg')
+                .attr('width', reWidth)
+                .attr('height', reHeight)
+                .append('g')
+                .attr('transform', `translate(${reMargin.left},${reMargin.top})`);
+            
+            // Scales
+            const reX = d3.scaleBand()
+                .domain(reData.map(d => d.year))
+                .range([0, reChartWidth])
+                .padding(0.4);
+            
+            const reY = d3.scaleLinear()
+                .domain([0, d3.max(reData, d => d.value) * 1.1])
+                .range([reChartHeight, 0]);
+            
+            // Axes
+            reSvg.append('g')
+                .attr('transform', `translate(0,${reChartHeight})`)
+                .call(d3.axisBottom(reX))
+                .selectAll('text')
+                .style('fill', '#e2e8f0');
+            
+            reSvg.append('g')
+                .call(d3.axisLeft(reY).ticks(5).tickFormat(d => `$${d}B`))
+                .selectAll('text')
+                .style('fill', '#e2e8f0');
+            
+            // Bars
+            reSvg.selectAll('.bar')
+                .data(reData)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => reX(d.year))
+                .attr('y', d => reY(d.value))
+                .attr('width', reX.bandwidth())
+                .attr('height', d => reChartHeight - reY(d.value))
+                .attr('fill', '#228B22')
+                .attr('rx', 4)
+                .on('mouseover', function(event, d) {
+                    d3.select(this).attr('fill', '#3cb371');
+                })
+                .on('mouseout', function() {
+                    d3.select(this).attr('fill', '#228B22');
+                });
+            
+            // Value labels
+            reSvg.selectAll('.label')
+                .data(reData)
+                .enter()
+                .append('text')
+                .attr('class', 'label')
+                .attr('x', d => reX(d.year) + reX.bandwidth() / 2)
+                .attr('y', d => reY(d.value) - 10)
+                .attr('text-anchor', 'middle')
+                .text(d => d.label)
+                .style('fill', '#ffffff')
+                .style('font-size', '12px');
+            
+            // PropTech Growth Chart - Line chart with two projections
+            const ptData1 = [
+                {year: 2024, value: 1.2},
+                {year: 2033, value: 3.6}
+            ];
+            
+            const ptData2 = [
+                {year: 2023, value: 1.91},
+                {year: 2035, value: 14}
+            ];
+            
+            const ptWidth = document.getElementById('proptech-chart').clientWidth;
+            const ptHeight = document.getElementById('proptech-chart').clientHeight;
+            const ptMargin = {top: 20, right: 30, bottom: 30, left: 60};
+            const ptChartWidth = ptWidth - ptMargin.left - ptMargin.right;
+            const ptChartHeight = ptHeight - ptMargin.top - ptMargin.bottom;
+            
+            const ptSvg = d3.select('#proptech-chart')
+                .append('svg')
+                .attr('width', ptWidth)
+                .attr('height', ptHeight)
+                .append('g')
+                .attr('transform', `translate(${ptMargin.left},${ptMargin.top})`);
+            
+            // Scales for PropTech chart
+            const ptX = d3.scaleLinear()
+                .domain([2023, 2035])
+                .range([0, ptChartWidth]);
+            
+            const ptY = d3.scaleLinear()
+                .domain([0, 15])
+                .range([ptChartHeight, 0]);
+            
+            // Axes
+            ptSvg.append('g')
+                .attr('transform', `translate(0,${ptChartHeight})`)
+                .call(d3.axisBottom(ptX).ticks(5).tickFormat(d => d))
+                .selectAll('text')
+                .style('fill', '#e2e8f0');
+            
+            ptSvg.append('g')
+                .call(d3.axisLeft(ptY).ticks(5).tickFormat(d => `$${d}B`))
+                .selectAll('text')
+                .style('fill', '#e2e8f0');
+            
+            // Line generator
+            const line = d3.line()
+                .x(d => ptX(d.year))
+                .y(d => ptY(d.value));
+            
+            // Add line 1
+            ptSvg.append('path')
+                .datum(ptData1)
+                .attr('fill', 'none')
+                .attr('stroke', '#FFA500')
+                .attr('stroke-width', 3)
+                .attr('d', line);
+            
+            // Add line 2
+            ptSvg.append('path')
+                .datum(ptData2)
+                .attr('fill', 'none')
+                .attr('stroke', '#228B22')
+                .attr('stroke-width', 3)
+                .attr('d', line);
+            
+            // Add points for line 1
+            ptSvg.selectAll('.dot1')
+                .data(ptData1)
+                .enter()
+                .append('circle')
+                .attr('class', 'dot')
+                .attr('cx', d => ptX(d.year))
+                .attr('cy', d => ptY(d.value))
+                .attr('r', 5)
+                .attr('fill', '#FFA500');
+            
+            // Add points for line 2
+            ptSvg.selectAll('.dot2')
+                .data(ptData2)
+                .enter()
+                .append('circle')
+                .attr('class', 'dot')
+                .attr('cx', d => ptX(d.year))
+                .attr('cy', d => ptY(d.value))
+                .attr('r', 5)
+                .attr('fill', '#228B22');
+            
+            // Add labels for points
+            ptSvg.selectAll('.pt-label1')
+                .data(ptData1)
+                .enter()
+                .append('text')
+                .attr('class', 'pt-label')
+                .attr('x', d => ptX(d.year))
+                .attr('y', d => ptY(d.value) - 10)
+                .attr('text-anchor', 'middle')
+                .text(d => `$${d.value}B`)
+                .style('fill', '#ffffff')
+                .style('font-size', '10px');
+            
+            ptSvg.selectAll('.pt-label2')
+                .data(ptData2)
+                .enter()
+                .append('text')
+                .attr('class', 'pt-label')
+                .attr('x', d => ptX(d.year))
+                .attr('y', d => ptY(d.value) - 10)
+                .attr('text-anchor', 'middle')
+                .text(d => `$${d.value}B`)
+                .style('fill', '#ffffff')
+                .style('font-size', '10px');
+            
+            // Legend
+            ptSvg.append('circle').attr('cx', ptChartWidth - 100).attr('cy', 20).attr('r', 5).style('fill', '#FFA500');
+            ptSvg.append('text').attr('x', ptChartWidth - 90).attr('y', 20).text('Forecast 1').style('font-size', '12px').style('fill', '#e2e8f0').attr('alignment-baseline', 'middle');
+            ptSvg.append('circle').attr('cx', ptChartWidth - 100).attr('cy', 40).attr('r', 5).style('fill', '#228B22');
+            ptSvg.append('text').attr('x', ptChartWidth - 90).attr('y', 40).text('Forecast 2').style('font-size', '12px').style('fill', '#e2e8f0').attr('alignment-baseline', 'middle');
+        });
+    </script>
+
+</body></html>

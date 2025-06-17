@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PropAnalytics: Transforming Property Investment Decisions</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 720px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            height: 720px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .icon-card {
+            border-left: 4px solid #228B22;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .delay-1 {
+            animation-delay: 0.3s;
+        }
+        .delay-2 {
+            animation-delay: 0.6s;
+        }
+        .delay-3 {
+            animation-delay: 0.9s;
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg flex flex-col justify-between p-12 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-20 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Top section with subtitle -->
+<div class="z-10 animate-fadeIn">
+<p class="text-gray-200 text-xl tracking-wider font-light mb-2">PRESENTATION</p>
+<div class="accent-line h-1 w-24 mb-6"></div>
+</div>
+<!-- Middle section with main title -->
+<div class="z-10 flex-grow flex flex-col justify-center">
+<h1 class="text-6xl font-bold text-white leading-tight tracking-tight text-shadow animate-fadeIn">
+                PropAnalytics<span class="text-green-400">.</span>
+</h1>
+<h2 class="text-4xl font-light text-white mt-4 tracking-wide text-shadow animate-fadeIn delay-1">
+                Transforming Property Investment Decisions
+            </h2>
+<div class="accent-line h-1 w-48 my-8 animate-fadeIn delay-1"></div>
+<p class="text-xl text-gray-200 max-w-2xl animate-fadeIn delay-2">
+                A comprehensive platform for detailed property investment reports, 
+                RERA data access, and location analytics to empower individual investors
+            </p>
+</div>
+<!-- Bottom section with key features -->
+<div class="z-10 grid grid-cols-3 gap-8 mt-12 animate-fadeIn delay-3">
+<div class="icon-card bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm">
+<div class="flex items-center">
+<i class="fas fa-chart-line text-green-400 text-2xl mr-4"></i>
+<span class="text-white font-medium">Investment Reports</span>
+</div>
+</div>
+<div class="icon-card bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm">
+<div class="flex items-center">
+<i class="fas fa-file-contract text-green-400 text-2xl mr-4"></i>
+<span class="text-white font-medium">RERA Data Access</span>
+</div>
+</div>
+<div class="icon-card bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm">
+<div class="flex items-center">
+<i class="fas fa-map-marked-alt text-green-400 text-2xl mr-4"></i>
+<span class="text-white font-medium">Location Analytics</span>
+</div>
+</div>
+</div>
+<!-- Date and presenter info -->
+<div class="absolute bottom-12 right-12 text-right z-10">
+<p class="text-gray-300 text-lg">June 17, 2025</p>
+</div>
+</div>
+
+</body></html>

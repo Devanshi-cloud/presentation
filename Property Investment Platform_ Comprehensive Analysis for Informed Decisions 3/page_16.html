@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impact and Opportunity</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 720px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .impact-card {
+            border-left: 4px solid #228B22;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .cta-button {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(34,139,34,0.4);
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Impact and Opportunity</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+</div>
+<!-- Main content - Impact visualization -->
+<div class="flex mb-6 relative z-10">
+<div class="w-1/2 pr-6">
+<div class="text-gray-200 mb-6">
+<p class="text-lg">Our platform stands to revolutionize property investment in India by making sophisticated analytics accessible to individual investors, enhancing market transparency, and fostering informed decision-making.</p>
+</div>
+<!-- Growth visualization -->
+<div class="h-48 w-full bg-white bg-opacity-5 rounded-lg mb-6" id="impact-visual"></div>
+<!-- Call to Action -->
+<div class="text-center mt-8">
+<a class="cta-button inline-block py-3 px-8 rounded-full text-white font-bold text-lg" href="#">
+                        Join the Future of Property Investment
+                    </a>
+</div>
+</div>
+<div class="w-1/2 grid grid-cols-2 gap-4">
+<!-- Impact Cards -->
+<div class="impact-card rounded-lg p-5">
+<div class="flex items-center mb-3">
+<i class="fas fa-users text-yellow-400 text-2xl mr-3"></i>
+<h3 class="text-white text-lg font-semibold">Democratized Access</h3>
+</div>
+<p class="text-gray-200 text-sm">Bringing institutional-grade investment analytics to individual investors, regardless of expertise or resources.</p>
+</div>
+<div class="impact-card rounded-lg p-5">
+<div class="flex items-center mb-3">
+<i class="fas fa-eye text-yellow-400 text-2xl mr-3"></i>
+<h3 class="text-white text-lg font-semibold">Enhanced Transparency</h3>
+</div>
+<p class="text-gray-200 text-sm">Converting opaque RERA data into accessible, actionable insights for better decision-making.</p>
+</div>
+<div class="impact-card rounded-lg p-5">
+<div class="flex items-center mb-3">
+<i class="fas fa-chart-pie text-yellow-400 text-2xl mr-3"></i>
+<h3 class="text-white text-lg font-semibold">Market Efficiency</h3>
+</div>
+<p class="text-gray-200 text-sm">Driving greater investor participation and improving overall market function through data-driven decisions.</p>
+</div>
+<div class="impact-card rounded-lg p-5">
+<div class="flex items-center mb-3">
+<i class="fas fa-seedling text-yellow-400 text-2xl mr-3"></i>
+<h3 class="text-white text-lg font-semibold">PropTech Growth</h3>
+</div>
+<p class="text-gray-200 text-sm">Contributing to the maturation of India&#39;s PropTech ecosystem, projected to reach USD 14 billion by 2035.</p>
+</div>
+</div>
+</div>
+<!-- Bottom summary -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm mx-auto relative z-10 mt-6">
+<div class="flex items-center">
+<div class="flex-shrink-0 mr-6">
+<i class="fas fa-lightbulb text-yellow-400 text-4xl"></i>
+</div>
+<div>
+<h3 class="text-white text-xl font-semibold mb-2">Building a More Equitable Investment Landscape</h3>
+<p class="text-gray-200">
+                        By mitigating risks associated with incomplete information and opaque dealings, our platform will enhance trust and stimulate growth within the real estate sector, ultimately empowering individuals to build wealth through sound property investments.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Thank you note -->
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center z-10">
+<p class="text-white text-xl font-light">Thank you for your attention</p>
+<p class="text-gray-300 mt-1">Contact: info@propanalytics.com</p>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            16/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for impact growth
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('impact-visual').clientWidth;
+            const height = document.getElementById('impact-visual').clientHeight;
+            
+            const svg = d3.select('#impact-visual')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+                
+            // Create a simple growing curve to represent market impact
+            const data = [
+                {x: 0, y: height * 0.8},
+                {x: width * 0.2, y: height * 0.7},
+                {x: width * 0.4, y: height * 0.5},
+                {x: width * 0.6, y: height * 0.35},
+                {x: width * 0.8, y: height * 0.25},
+                {x: width, y: height * 0.15}
+            ];
+            
+            // Define the line
+            const line = d3.line()
+                .x(d => d.x)
+                .y(d => d.y)
+                .curve(d3.curveBasis);
+                
+            // Add the path
+            const path = svg.append('path')
+                .datum(data)
+                .attr('fill', 'none')
+                .attr('stroke', '#3cb371')
+                .attr('stroke-width', 3)
+                .attr('d', line);
+                
+            // Animate the path
+            const pathLength = path.node().getTotalLength();
+            
+            path
+                .attr("stroke-dasharray", pathLength + " " + pathLength)
+                .attr("stroke-dashoffset", pathLength)
+                .transition()
+                .duration(2000)
+                .ease(d3.easeLinear)
+                .attr("stroke-dashoffset", 0);
+                
+            // Add labels
+            svg.append('text')
+                .attr('x', 10)
+                .attr('y', height * 0.9)
+                .text('Current')
+                .attr('fill', 'white')
+                .attr('font-size', '12px');
+                
+            svg.append('text')
+                .attr('x', width - 60)
+                .attr('y', height * 0.15)
+                .text('Potential')
+                .attr('fill', 'white')
+                .attr('font-size', '12px');
+                
+            // Add points with glow effect
+            svg.selectAll('.impact-point')
+                .data([
+                    {x: width * 0.2, y: height * 0.7, label: "Access"},
+                    {x: width * 0.4, y: height * 0.5, label: "Transparency"},
+                    {x: width * 0.6, y: height * 0.35, label: "Efficiency"},
+                    {x: width * 0.8, y: height * 0.25, label: "Growth"}
+                ])
+                .enter()
+                .append('g')
+                .attr('class', 'impact-point')
+                .attr('transform', d => `translate(${d.x}, ${d.y})`)
+                .each(function(d, i) {
+                    // Add glow effect
+                    d3.select(this).append('circle')
+                        .attr('r', 8)
+                        .attr('fill', 'rgba(255, 165, 0, 0.3)');
+                        
+                    // Add point
+                    d3.select(this).append('circle')
+                        .attr('r', 4)
+                        .attr('fill', '#FFA500')
+                        .attr('opacity', 0)
+                        .transition()
+                        .delay(i * 500 + 500)
+                        .duration(500)
+                        .attr('opacity', 1);
+                        
+                    // Add label
+                    d3.select(this).append('text')
+                        .attr('x', 0)
+                        .attr('y', -12)
+                        .attr('text-anchor', 'middle')
+                        .attr('fill', 'white')
+                        .attr('font-size', '10px')
+                        .text(d.label)
+                        .attr('opacity', 0)
+                        .transition()
+                        .delay(i * 500 + 500)
+                        .duration(500)
+                        .attr('opacity', 1);
+                });
+        });
+    </script>
+
+</body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Market Need: Why This Platform Matters</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 830px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 830px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .pain-point {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        .pain-point:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .icon-container {
+            background: rgba(255, 165, 0, 0.2);
+        }
+        .solution-path {
+            background: rgba(34, 139, 34, 0.1);
+            border: 1px dashed #228B22;
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2">Market Need: Why This Platform Matters</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+</div>
+<!-- Introduction text -->
+<div class="text-gray-200 mb-6 max-w-4xl relative z-10">
+<p class="text-lg">The Indian real estate market presents significant pain points for individual investors that our platform aims to address, creating a more transparent and efficient investment ecosystem.</p>
+</div>
+<!-- Pain points and market need visualization -->
+<div class="flex justify-between items-center mb-8 relative z-10">
+<!-- Pain Points Column -->
+<div class="w-2/3 pr-6">
+<div class="grid grid-cols-2 gap-6">
+<!-- Data Reliability Issues -->
+<div class="pain-point rounded-lg p-5 border-t-4 border-yellow-500">
+<div class="flex items-center mb-3">
+<div class="icon-container rounded-full p-3 mr-3">
+<i class="fas fa-database text-yellow-400 text-xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Data Reliability Issues</h3>
+</div>
+<ul class="text-gray-200 space-y-1 pl-2 text-sm">
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Siloed information across platforms</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Non-standardized data formats</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>&#34;Bad data&#34; problem for analytical models</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Time-consuming manual collection</li>
+</ul>
+</div>
+<!-- Transparency Concerns -->
+<div class="pain-point rounded-lg p-5 border-t-4 border-yellow-500">
+<div class="flex items-center mb-3">
+<div class="icon-container rounded-full p-3 mr-3">
+<i class="fas fa-eye-slash text-yellow-400 text-xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Transparency Concerns</h3>
+</div>
+<ul class="text-gray-200 space-y-1 pl-2 text-sm">
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Historical lack of transparency</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Project delays and misleading promises</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>False advertising persists despite RERA</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Non-RERA projects lack protection</li>
+</ul>
+</div>
+<!-- Decision-Making Complexity -->
+<div class="pain-point rounded-lg p-5 border-t-4 border-yellow-500">
+<div class="flex items-center mb-3">
+<div class="icon-container rounded-full p-3 mr-3">
+<i class="fas fa-brain text-yellow-400 text-xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Decision-Making Complexity</h3>
+</div>
+<ul class="text-gray-200 space-y-1 pl-2 text-sm">
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Limited liquidity compared to other assets</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Market fluctuations and vacancy risks</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Difficulty identifying responsible investments</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Complex contractual and legal issues</li>
+</ul>
+</div>
+<!-- Investment Analysis Tools Gap -->
+<div class="pain-point rounded-lg p-5 border-t-4 border-yellow-500">
+<div class="flex items-center mb-3">
+<div class="icon-container rounded-full p-3 mr-3">
+<i class="fas fa-tools text-yellow-400 text-xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Investment Analysis Tools Gap</h3>
+</div>
+<ul class="text-gray-200 space-y-1 pl-2 text-sm">
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Lack of comprehensive analytical tools</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Limited access to institutional-grade research</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Difficulty in valuation and risk assessment</li>
+<li><i class="fas fa-exclamation-circle text-yellow-400 mr-2"></i>Fragmented location-based insights</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Solution Pathway -->
+<div class="w-1/3 flex flex-col items-center">
+<div class="h-60 w-full" id="funnel-visualization"></div>
+<div class="solution-path rounded-lg p-5 text-center w-full">
+<h3 class="text-white text-xl font-semibold mb-3">The Solution</h3>
+<p class="text-gray-200 text-sm mb-4">A comprehensive platform that transforms fragmented data into actionable investment insights</p>
+<div class="flex justify-center space-x-4">
+<div class="text-center">
+<div class="bg-green-500 bg-opacity-20 rounded-full p-3 mx-auto mb-2">
+<i class="fas fa-file-invoice-dollar text-green-400 text-xl"></i>
+</div>
+<p class="text-white text-sm">Investment Reports</p>
+</div>
+<div class="text-center">
+<div class="bg-green-500 bg-opacity-20 rounded-full p-3 mx-auto mb-2">
+<i class="fas fa-landmark text-green-400 text-xl"></i>
+</div>
+<p class="text-white text-sm">RERA Access</p>
+</div>
+<div class="text-center">
+<div class="bg-green-500 bg-opacity-20 rounded-full p-3 mx-auto mb-2">
+<i class="fas fa-map-marked-alt text-green-400 text-xl"></i>
+</div>
+<p class="text-white text-sm">Location Analytics</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom insight -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10 mt-4">
+<p class="text-white text-center">
+<i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+<span class="font-semibold">Key Insight:</span> By addressing these pain points, our platform creates a data-driven pathway to property investment, empowering individuals with insights previously available only to institutional investors.
+            </p>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            3/16
+        </div>
+</div>
+<script>
+        // D3.js funnel visualization for pain points to solution
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('funnel-visualization').clientWidth;
+            const height = document.getElementById('funnel-visualization').clientHeight;
+            
+            const svg = d3.select('#funnel-visualization')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            // Define the funnel data
+            const funnelData = [
+                { label: "Current Market", width: width * 0.9, color: "#FFA500", opacity: 0.6 },
+                { label: "Pain Points", width: width * 0.75, color: "#FFA500", opacity: 0.7 },
+                { label: "Market Need", width: width * 0.6, color: "#e67700", opacity: 0.8 },
+                { label: "Our Solution", width: width * 0.45, color: "#228B22", opacity: 0.9 }
+            ];
+            
+            const funnelHeight = height / funnelData.length;
+            
+            // Create funnel segments
+            svg.selectAll('trapezoid')
+                .data(funnelData)
+                .enter()
+                .append('path')
+                .attr('d', (d, i) => {
+                    const y = i * funnelHeight;
+                    const nextWidth = i < funnelData.length - 1 ? funnelData[i + 1].width : d.width;
+                    
+                    return `M ${(width - d.width) / 2} ${y} 
+                            L ${(width + d.width) / 2} ${y} 
+                            L ${(width + nextWidth) / 2} ${y + funnelHeight} 
+                            L ${(width - nextWidth) / 2} ${y + funnelHeight} Z`;
+                })
+                .attr('fill', d => d.color)
+                .attr('opacity', d => d.opacity)
+                .attr('stroke', '#FFFFFF')
+                .attr('stroke-width', 1);
+            
+            // Add labels
+            svg.selectAll('text')
+                .data(funnelData)
+                .enter()
+                .append('text')
+                .attr('x', width / 2)
+                .attr('y', (d, i) => i * funnelHeight + funnelHeight / 2 + 5)
+                .attr('text-anchor', 'middle')
+                .attr('fill', 'white')
+                .text(d => d.label)
+                .style('font-size', '14px')
+                .style('font-weight', (d, i) => i === funnelData.length - 1 ? 'bold' : 'normal');
+        });
+    </script>
+
+</body></html>

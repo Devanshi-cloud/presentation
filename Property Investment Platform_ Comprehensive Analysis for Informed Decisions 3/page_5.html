@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Power of Location Analytics</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 925px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 925px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .analytics-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-top: 3px solid #228B22;
+            transition: all 0.3s ease;
+        }
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .analytics-icon {
+            color: #FFA500;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">The Power of Location Analytics</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+<p class="text-gray-200 text-lg mb-8 max-w-3xl">
+                Leveraging Geographic Information Systems (GIS) and Artificial Intelligence (AI) to transform 
+                property investment decisions with data-driven insights.
+            </p>
+</div>
+<!-- Location Analytics Visualization -->
+<div class="flex mb-8">
+<!-- Left side: Analytics cards -->
+<div class="w-2/3 grid grid-cols-2 gap-6 pr-6 relative z-10">
+<!-- Enhanced Valuation Accuracy -->
+<div class="analytics-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-chart-bar analytics-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Enhanced Valuation Accuracy</h3>
+</div>
+<ul class="text-gray-200 space-y-2 pl-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>AI analysis of diverse market datasets</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Integration of geospatial data &amp; infrastructure</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Scientific methodology vs. subjective estimates</li>
+</ul>
+</div>
+<!-- Predictive Insights -->
+<div class="analytics-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-lightbulb analytics-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Predictive Insights</h3>
+</div>
+<ul class="text-gray-200 space-y-2 pl-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Forecast future property values</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Identify high-growth areas</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Spot potentially undervalued assets</li>
+</ul>
+</div>
+<!-- Informed Investment Decisions -->
+<div class="analytics-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-brain analytics-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Informed Decisions</h3>
+</div>
+<ul class="text-gray-200 space-y-2 pl-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Real-time, AI-driven market insights</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Precise local data on assets &amp; occupancy</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Multi-level investment management</li>
+</ul>
+</div>
+<!-- Streamlined Market Analysis -->
+<div class="analytics-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-search-location analytics-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Streamlined Analysis</h3>
+</div>
+<ul class="text-gray-200 space-y-2 pl-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Minimize property valuation disputes</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Immediate access to value zone data</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Align valuations with market realities</li>
+</ul>
+</div>
+</div>
+<!-- Right side: D3 visualization -->
+<div class="w-1/3 relative z-10">
+<div class="h-full w-full bg-white bg-opacity-5 rounded-lg" id="location-analytics-visual"></div>
+</div>
+</div>
+<!-- Real-world example -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10">
+<div class="flex items-center">
+<div class="flex-shrink-0">
+<i class="fas fa-map-marked-alt text-green-400 text-3xl mr-4"></i>
+</div>
+<div>
+<h3 class="text-white text-lg font-semibold mb-1">Real-World Application</h3>
+<p class="text-gray-200">
+                        Maharashtra is utilizing GIS mapping to bring clarity and accuracy to Ready Reckoner (RR) rates, 
+                        the minimum property values set for transactions, moving from subjective estimations to 
+                        data-driven, transparent valuations.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            5/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for location analytics
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('location-analytics-visual').clientWidth;
+            const height = document.getElementById('location-analytics-visual').clientHeight;
+            
+            const svg = d3.select('#location-analytics-visual')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+                
+            // Create a simplified map representation
+            const gridSize = 15;
+            const cellSize = Math.min(width, height) / gridSize;
+            
+            // Create grid cells
+            for (let x = 0; x < gridSize; x++) {
+                for (let y = 0; y < gridSize; y++) {
+                    // Calculate value (higher in center, lower at edges)
+                    const centerX = gridSize / 2;
+                    const centerY = gridSize / 2;
+                    const distFromCenter = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+                    const maxDist = Math.sqrt(Math.pow(gridSize, 2));
+                    const normalizedValue = 1 - (distFromCenter / maxDist);
+                    
+                    // Add some randomness
+                    const value = normalizedValue * 0.7 + Math.random() * 0.3;
+                    
+                    // Assign color based on value
+                    let fillColor;
+                    if (value > 0.85) fillColor = '#228B22'; // High value
+                    else if (value > 0.7) fillColor = '#32CD32';
+                    else if (value > 0.5) fillColor = '#FFA500';
+                    else if (value > 0.3) fillColor = '#FF8C00';
+                    else fillColor = '#CD5C5C'; // Low value
+                    
+                    svg.append('rect')
+                        .attr('x', x * cellSize)
+                        .attr('y', y * cellSize)
+                        .attr('width', cellSize - 1)
+                        .attr('height', cellSize - 1)
+                        .attr('fill', fillColor)
+                        .attr('opacity', 0.3 + value * 0.7)
+                        .attr('rx', 2);
+                }
+            }
+            
+            // Add some "roads" to make it look more like a map
+            const roads = [
+                {x1: width*0.2, y1: 0, x2: width*0.2, y2: height},
+                {x1: width*0.5, y1: 0, x2: width*0.5, y2: height},
+                {x1: width*0.8, y1: 0, x2: width*0.8, y2: height},
+                {x1: 0, y1: height*0.3, x2: width, y2: height*0.3},
+                {x1: 0, y1: height*0.7, x2: width, y2: height*0.7}
+            ];
+            
+            roads.forEach(road => {
+                svg.append('line')
+                    .attr('x1', road.x1)
+                    .attr('y1', road.y1)
+                    .attr('x2', road.x2)
+                    .attr('y2', road.y2)
+                    .attr('stroke', '#FFFFFF')
+                    .attr('stroke-width', 2)
+                    .attr('opacity', 0.4);
+            });
+            
+            // Add POI markers
+            const pois = [
+                {x: width*0.2, y: height*0.3, icon: "\uf1ad"}, // Building
+                {x: width*0.5, y: height*0.7, icon: "\uf54f"}, // Shopping
+                {x: width*0.8, y: height*0.3, icon: "\uf5fd"}, // Hospital
+                {x: width*0.3, y: height*0.6, icon: "\uf549"}, // School
+                {x: width*0.7, y: height*0.5, icon: "\uf239"}  // Bus
+            ];
+            
+            // Add text labels
+            svg.append('text')
+                .attr('x', width/2)
+                .attr('y', 20)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#FFFFFF')
+                .style('font-size', '14px')
+                .text('Location Value Heat Map');
+                
+            svg.append('text')
+                .attr('x', width/2)
+                .attr('y', height - 10)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#FFFFFF')
+                .style('font-size', '12px')
+                .text('GIS-powered spatial analysis');
+        });
+    </script>
+
+</body></html>

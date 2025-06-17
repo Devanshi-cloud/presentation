@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phased Go-to-Market Approach</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 902px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 902px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .phase-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+        }
+        .phase-header {
+            border-bottom: 2px solid #228B22;
+        }
+        .phase-icon {
+            color: #FFA500;
+        }
+        .timeline-connector {
+            height: 4px;
+            background: linear-gradient(90deg, #228B22, #FFA500);
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Phased Go-to-Market Approach</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+<p class="text-gray-200 text-lg mb-8">Strategic implementation plan designed for controlled growth, continuous learning, and market adaptation</p>
+</div>
+<!-- Timeline visualization -->
+<div class="flex justify-between items-center mb-6 relative z-10">
+<div class="bg-green-500 rounded-full h-8 w-8 flex items-center justify-center text-white font-bold">1</div>
+<div class="timeline-connector flex-grow mx-4"></div>
+<div class="bg-green-500 rounded-full h-8 w-8 flex items-center justify-center text-white font-bold">2</div>
+<div class="timeline-connector flex-grow mx-4"></div>
+<div class="bg-green-500 rounded-full h-8 w-8 flex items-center justify-center text-white font-bold">3</div>
+</div>
+<!-- Phase cards -->
+<div class="grid grid-cols-3 gap-6 mb-8 relative z-10">
+<!-- Phase 1 -->
+<div class="phase-card rounded-lg overflow-hidden">
+<div class="phase-header bg-opacity-20 bg-white p-4">
+<div class="flex items-center">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-3">
+<i class="fas fa-rocket phase-icon text-2xl"></i>
+</div>
+<div>
+<h3 class="text-white text-xl font-semibold">Phase 1: MVP &amp; Early Adoption</h3>
+<p class="text-gray-300 text-sm">6-9 Months</p>
+</div>
+</div>
+</div>
+<div class="p-5">
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-map-marker-alt mr-2"></i>Geographic Focus</p>
+<p class="text-gray-200 text-sm">Launch in 1-2 key metropolitan areas (Mumbai, Bengaluru) with high real estate activity</p>
+</div>
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-cubes mr-2"></i>Core Features</p>
+<ul class="text-gray-200 text-sm list-disc pl-5 space-y-1">
+<li>RERA project search &amp; verification</li>
+<li>Basic investment reports</li>
+<li>Essential location analytics</li>
+</ul>
+</div>
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-users mr-2"></i>Target Audience</p>
+<p class="text-gray-200 text-sm">Tech-savvy individual investors, first-time homebuyers</p>
+</div>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="phase-card rounded-lg overflow-hidden">
+<div class="phase-header bg-opacity-20 bg-white p-4">
+<div class="flex items-center">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-3">
+<i class="fas fa-chart-line phase-icon text-2xl"></i>
+</div>
+<div>
+<h3 class="text-white text-xl font-semibold">Phase 2: Feature Enhancement</h3>
+<p class="text-gray-300 text-sm">9-18 Months</p>
+</div>
+</div>
+</div>
+<div class="p-5">
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-map-marker-alt mr-2"></i>Geographic Focus</p>
+<p class="text-gray-200 text-sm">Expand to 3-5 additional major cities based on RERA data availability</p>
+</div>
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-cubes mr-2"></i>Enhanced Features</p>
+<ul class="text-gray-200 text-sm list-disc pl-5 space-y-1">
+<li>Advanced financial modeling</li>
+<li>Comprehensive location intelligence</li>
+<li>Customizable reports &amp; dashboards</li>
+<li>Tiered subscription model</li>
+</ul>
+</div>
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-users mr-2"></i>Target Audience</p>
+<p class="text-gray-200 text-sm">Serious investors, property consultants, smaller real estate firms</p>
+</div>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="phase-card rounded-lg overflow-hidden">
+<div class="phase-header bg-opacity-20 bg-white p-4">
+<div class="flex items-center">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-3">
+<i class="fas fa-globe phase-icon text-2xl"></i>
+</div>
+<div>
+<h3 class="text-white text-xl font-semibold">Phase 3: Scaling &amp; Diversification</h3>
+<p class="text-gray-300 text-sm">18+ Months</p>
+</div>
+</div>
+</div>
+<div class="p-5">
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-map-marker-alt mr-2"></i>Geographic Focus</p>
+<p class="text-gray-200 text-sm">Comprehensive coverage of all major RERA-compliant states</p>
+</div>
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-cubes mr-2"></i>New Offerings</p>
+<ul class="text-gray-200 text-sm list-disc pl-5 space-y-1">
+<li>Portfolio management tools</li>
+<li>AI-powered investment recommendations</li>
+<li>B2B solutions &amp; enterprise integrations</li>
+<li>Mobile application launch</li>
+</ul>
+</div>
+<div class="mb-3">
+<p class="text-green-400 font-medium mb-1"><i class="fas fa-users mr-2"></i>Target Audience</p>
+<p class="text-gray-200 text-sm">Institutional investors, wealth management firms, enterprise clients</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Marketing strategies visualization -->
+<div class="bg-white bg-opacity-10 rounded-lg p-5 backdrop-filter backdrop-blur-sm max-w-5xl mx-auto relative z-10">
+<h3 class="text-white text-xl font-medium mb-3"><i class="fas fa-bullhorn text-yellow-400 mr-2"></i>Marketing Evolution</h3>
+<div class="grid grid-cols-3 gap-6">
+<div>
+<ul class="text-gray-200 text-sm space-y-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Digital &amp; content marketing</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Direct outreach to communities</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Free access for early adopters</li>
+</ul>
+</div>
+<div>
+<ul class="text-gray-200 text-sm space-y-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Industry partnerships</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Webinars &amp; online workshops</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Referral program &amp; paid advertising</li>
+</ul>
+</div>
+<div>
+<ul class="text-gray-200 text-sm space-y-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Thought leadership campaigns</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Industry conference presence</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Strategic financial alliances</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            15/16
+        </div>
+</div>
+
+</body></html>

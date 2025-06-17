@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The RERA Data Challenge</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 772px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 772px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .state-portal {
+            transition: all 0.3s ease;
+        }
+        .state-portal:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">The RERA Data Challenge</h1>
+<div class="accent-line h-1 w-32 mb-8"></div>
+</div>
+<!-- Two-column layout -->
+<div class="grid grid-cols-2 gap-8 mb-6 relative z-10">
+<!-- Left column: Importance of RERA -->
+<div class="info-card p-6">
+<h2 class="text-2xl text-white font-semibold mb-4 flex items-center">
+<i class="fas fa-shield-alt text-green-400 mr-3"></i>
+                    Importance of RERA Data
+                </h2>
+<ul class="text-gray-200 space-y-3 pl-2">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+<span>Enhances transparency, accountability, and consumer protection in real estate</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+<span>Mandates developers to register projects and disclose critical details (layout, approvals, timelines)</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+<span>Requires 70% of project funds to be deposited in escrow accounts, ensuring proper fund utilization</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-green-400 mt-1 mr-3"></i>
+<span>Protects homebuyers&#39; interests and boosts confidence in investment decisions</span>
+</li>
+</ul>
+</div>
+<!-- Right column: Technical Challenges -->
+<div class="info-card p-6">
+<h2 class="text-2xl text-white font-semibold mb-4 flex items-center">
+<i class="fas fa-exclamation-triangle text-yellow-400 mr-3"></i>
+                    Technical Access Challenges
+                </h2>
+<ul class="text-gray-200 space-y-3 pl-2">
+<li class="flex items-start">
+<i class="fas fa-times-circle text-red-400 mt-1 mr-3"></i>
+<span>Each Indian state operates its own RERA portal with distinct formats, search interfaces, and data structures</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-times-circle text-red-400 mt-1 mr-3"></i>
+<span>Lack of standardization makes cross-state data aggregation and analysis complex</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-times-circle text-red-400 mt-1 mr-3"></i>
+<span>Advanced anti-bot mechanisms and CAPTCHA-based roadblocks prevent automated data extraction</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-times-circle text-red-400 mt-1 mr-3"></i>
+<span>Difficulty detecting changes or newly added listings in real-time, crucial for timely decisions</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Visual representation of fragmented RERA portals -->
+<div class="relative z-10 mb-6">
+<h3 class="text-xl text-white font-medium mb-4 text-center">Fragmented State RERA Portals</h3>
+<div class="flex justify-center space-x-4" id="rera-portals">
+<!-- State RERA portal representations will be added here by D3.js -->
+</div>
+</div>
+<!-- Bottom conclusion -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10">
+<p class="text-white text-center text-lg">
+<i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                While RERA aims to provide transparency, individuals struggle to gather, compare, and analyze data from these fragmented sources—a key challenge our platform addresses.
+            </p>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            4/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for fragmented RERA portals
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = d3.select('#rera-portals');
+            
+            // Sample states with RERA portals
+            const states = [
+                { name: "Maharashtra", format: "Complex" },
+                { name: "Karnataka", format: "Medium" },
+                { name: "Tamil Nadu", format: "Simple" },
+                { name: "Uttar Pradesh", format: "Complex" },
+                { name: "Gujarat", format: "Medium" },
+                { name: "Delhi", format: "Complex" }
+            ];
+            
+            // Create portal representations
+            states.forEach(state => {
+                const portal = container.append('div')
+                    .attr('class', 'state-portal info-card p-3 text-center w-32')
+                    .style('border-top', state.format === 'Complex' ? '4px solid #FFA500' : 
+                                       state.format === 'Medium' ? '4px solid #FFFF00' : 
+                                       '4px solid #228B22');
+                
+                portal.append('div')
+                    .attr('class', 'text-white text-sm font-medium mb-1')
+                    .text(state.name);
+                
+                portal.append('div')
+                    .attr('class', 'text-xs text-gray-300')
+                    .text(`${state.format} Format`);
+                
+                // Add an icon based on complexity
+                portal.append('div')
+                    .attr('class', 'mt-1')
+                    .append('i')
+                    .attr('class', state.format === 'Complex' ? 'fas fa-puzzle-piece text-orange-400' : 
+                                 state.format === 'Medium' ? 'fas fa-table text-yellow-400' : 
+                                 'fas fa-file-alt text-green-400');
+            });
+        });
+    </script>
+
+</body></html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feature 2: RERA Data Access Strategy</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 934px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 934px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .strategy-card {
+            border-left: 4px solid #228B22;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .strategy-icon {
+            color: #FFA500;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .connector-line {
+            stroke: rgba(255, 255, 255, 0.4);
+            stroke-dasharray: 5,5;
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Feature 2: RERA Data Access Strategy</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+<p class="text-gray-200 text-lg max-w-4xl">Our multi-pronged approach to overcoming the challenge of accessing fragmented RERA data from diverse state portals with varying formats and technical barriers.</p>
+</div>
+<!-- Data Flow Visualization -->
+<div class="h-16 w-full max-w-4xl mx-auto my-6 relative z-10" id="data-flow"></div>
+<!-- Strategy Cards Grid -->
+<div class="grid grid-cols-2 gap-6 mb-6 relative z-10">
+<!-- API Integration -->
+<div class="strategy-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-plug strategy-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Official API Integration</h3>
+</div>
+<ul class="text-gray-200 space-y-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Direct integration with state RERA authorities where APIs are available</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Connection with intermediary services (e.g., Surepass for Maharashtra)</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Monitoring platforms like API Setu and data.gov.in for new releases</li>
+</ul>
+</div>
+<!-- Advanced Web Scraping -->
+<div class="strategy-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-spider strategy-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Advanced &amp; Ethical Web Scraping</h3>
+</div>
+<ul class="text-gray-200 space-y-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Sophisticated crawlers that navigate diverse portal structures</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Handle anti-scraping measures responsibly (CAPTCHAs, rate limiting)</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Extract data from various formats (HTML, PDFs) with advanced parsing</li>
+</ul>
+</div>
+<!-- Data Partnerships -->
+<div class="strategy-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-handshake strategy-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Strategic Data Partnerships</h3>
+</div>
+<ul class="text-gray-200 space-y-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Collaborations with specialized RERA data aggregators</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Access to pre-cleaned and structured datasets</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Broader coverage across multiple states</li>
+</ul>
+</div>
+<!-- Data Processing -->
+<div class="strategy-card rounded-lg p-6">
+<div class="flex items-center mb-3">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-cogs strategy-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Data Normalization &amp; Validation</h3>
+</div>
+<ul class="text-gray-200 space-y-2">
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Standardizing extracted data from inconsistent formats</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Automated validation checks with AI-assisted verification</li>
+<li><i class="fas fa-check-circle text-green-400 mr-2"></i>Continuous monitoring for updates and real-time changes</li>
+</ul>
+</div>
+</div>
+<!-- Bottom section with key advantage -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10">
+<div class="flex items-center">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-shield-alt text-green-400 text-2xl"></i>
+</div>
+<div>
+<h4 class="text-white text-lg font-semibold">Transparency &amp; Trust</h4>
+<p class="text-gray-200">Our platform clearly indicates the source and last updated date for all RERA information, maintaining complete transparency with users.</p>
+</div>
+</div>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            8/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for data flow
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('data-flow').clientWidth;
+            const height = document.getElementById('data-flow').clientHeight;
+            
+            const svg = d3.select('#data-flow')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            // Define the data sources
+            const sources = [
+                { id: 1, label: "API Sources", x: width * 0.15, y: height/2 },
+                { id: 2, label: "Web Scraping", x: width * 0.35, y: height/2 },
+                { id: 3, label: "Partnerships", x: width * 0.55, y: height/2 },
+                { id: 4, label: "Validation", x: width * 0.75, y: height/2 },
+                { id: 5, label: "Platform", x: width * 0.9, y: height/2 }
+            ];
+            
+            // Create the flow paths
+            svg.append("path")
+                .attr("d", `M${sources[0].x} ${sources[0].y} L${sources[3].x} ${sources[3].y}`)
+                .attr("class", "connector-line")
+                .attr("fill", "none")
+                .attr("stroke-width", 2);
+                
+            svg.append("path")
+                .attr("d", `M${sources[1].x} ${sources[1].y} L${sources[3].x} ${sources[3].y}`)
+                .attr("class", "connector-line")
+                .attr("fill", "none")
+                .attr("stroke-width", 2);
+                
+            svg.append("path")
+                .attr("d", `M${sources[2].x} ${sources[2].y} L${sources[3].x} ${sources[3].y}`)
+                .attr("class", "connector-line")
+                .attr("fill", "none")
+                .attr("stroke-width", 2);
+                
+            svg.append("path")
+                .attr("d", `M${sources[3].x} ${sources[3].y} L${sources[4].x} ${sources[4].y}`)
+                .attr("class", "connector-line")
+                .attr("fill", "none")
+                .attr("stroke-width", 2);
+            
+            // Create the nodes
+            const nodes = svg.selectAll("circle")
+                .data(sources)
+                .enter()
+                .append("circle")
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y)
+                .attr("r", 6)
+                .attr("fill", (d, i) => i === 4 ? "#228B22" : "#FFA500");
+                
+            // Add labels
+            svg.selectAll("text")
+                .data(sources)
+                .enter()
+                .append("text")
+                .attr("x", d => d.x)
+                .attr("y", d => d.y - 15)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#FFFFFF")
+                .attr("font-size", "12px")
+                .text(d => d.label);
+        });
+    </script>
+
+</body></html>

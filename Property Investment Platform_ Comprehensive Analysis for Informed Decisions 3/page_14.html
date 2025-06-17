@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data Acquisition Strategy</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 926px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 926px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .strategy-card {
+            border-left: 4px solid #228B22;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .strategy-icon {
+            color: #FFA500;
+        }
+        .flow-connector {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">Data Acquisition Strategy</h1>
+<div class="accent-line h-1 w-32 mb-6"></div>
+<p class="text-gray-200 text-lg mb-8 max-w-3xl">
+                Comprehensive approach to overcome the RERA data challenge and build a reliable data foundation for our platform
+            </p>
+</div>
+<!-- Data flow visualization -->
+<div class="relative z-10 flex justify-center mb-8">
+<div class="h-20 w-full max-w-4xl" id="data-flow-visual"></div>
+</div>
+<!-- Main content: Data acquisition strategies -->
+<div class="grid grid-cols-2 gap-8 mb-8 relative z-10">
+<!-- Hybrid Data Acquisition Model -->
+<div class="strategy-card rounded-lg p-6">
+<div class="flex items-center mb-4">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-database strategy-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Hybrid Data Acquisition Model</h3>
+</div>
+<ul class="text-gray-200 space-y-3 pl-2">
+<li class="flex">
+<i class="fas fa-plug text-green-400 mt-1 mr-3"></i>
+<div>
+<span class="font-medium">Official API Integration</span>
+<p class="text-sm">Direct integration with state RERA APIs (e.g., Surepass for Maharashtra) and monitoring platforms like API Setu and data.gov.in</p>
+</div>
+</li>
+<li class="flex">
+<i class="fas fa-spider text-green-400 mt-1 mr-3"></i>
+<div>
+<span class="font-medium">Advanced &amp; Ethical Web Scraping</span>
+<p class="text-sm">Sophisticated crawlers designed to handle diverse portal structures, dynamic content, anti-scraping measures, and various data formats</p>
+</div>
+</li>
+<li class="flex">
+<i class="fas fa-handshake text-green-400 mt-1 mr-3"></i>
+<div>
+<span class="font-medium">Strategic Partnerships</span>
+<p class="text-sm">Collaborations with specialized data aggregators (e.g., Actowiz Solutions) for broader coverage and pre-cleaned datasets</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Data Processing &amp; Quality Assurance -->
+<div class="strategy-card rounded-lg p-6">
+<div class="flex items-center mb-4">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-cogs strategy-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Data Processing &amp; Quality Assurance</h3>
+</div>
+<ul class="text-gray-200 space-y-3 pl-2">
+<li class="flex">
+<i class="fas fa-sync text-green-400 mt-1 mr-3"></i>
+<div>
+<span class="font-medium">Normalization &amp; Validation Engine</span>
+<p class="text-sm">Standardizing inconsistent data formats and implementing automated validation checks with AI-assisted manual verification</p>
+</div>
+</li>
+<li class="flex">
+<i class="fas fa-clock text-green-400 mt-1 mr-3"></i>
+<div>
+<span class="font-medium">Continuous Monitoring</span>
+<p class="text-sm">Regular, automated checks for new registrations, updates to existing projects, and changes in compliance status</p>
+</div>
+</li>
+<li class="flex">
+<i class="fas fa-shield-alt text-green-400 mt-1 mr-3"></i>
+<div>
+<span class="font-medium">Transparency &amp; Sourcing</span>
+<p class="text-sm">Clearly indicating data sources and last updated dates to maintain transparency with users</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Supplementary Data Sources -->
+<div class="strategy-card rounded-lg p-6 relative z-10 mb-4">
+<div class="flex items-center mb-4">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-layer-group strategy-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Supplementary Data Sources</h3>
+</div>
+<div class="grid grid-cols-4 gap-4 text-gray-200">
+<div class="text-center">
+<div class="bg-white bg-opacity-10 rounded-full p-3 mx-auto mb-2 w-12 h-12 flex items-center justify-center">
+<i class="fas fa-home text-green-400"></i>
+</div>
+<p class="text-sm">Property Listings &amp; MLS Feeds</p>
+</div>
+<div class="text-center">
+<div class="bg-white bg-opacity-10 rounded-full p-3 mx-auto mb-2 w-12 h-12 flex items-center justify-center">
+<i class="fas fa-map-marked-alt text-green-400"></i>
+</div>
+<p class="text-sm">Location Intelligence APIs</p>
+</div>
+<div class="text-center">
+<div class="bg-white bg-opacity-10 rounded-full p-3 mx-auto mb-2 w-12 h-12 flex items-center justify-center">
+<i class="fas fa-chart-line text-green-400"></i>
+</div>
+<p class="text-sm">Market &amp; Economic Data</p>
+</div>
+<div class="text-center">
+<div class="bg-white bg-opacity-10 rounded-full p-3 mx-auto mb-2 w-12 h-12 flex items-center justify-center">
+<i class="fas fa-file-invoice-dollar text-green-400"></i>
+</div>
+<p class="text-sm">Valuation &amp; Transaction Records</p>
+</div>
+</div>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            14/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for data flow
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('data-flow-visual').clientWidth;
+            const height = document.getElementById('data-flow-visual').clientHeight;
+            
+            const svg = d3.select('#data-flow-visual')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            // Define data sources
+            const sources = [
+                { id: 1, name: "RERA APIs", x: width * 0.1, y: height/2, r: 10 },
+                { id: 2, name: "Web Scraping", x: width * 0.25, y: height/2, r: 10 },
+                { id: 3, name: "Data Partners", x: width * 0.4, y: height/2, r: 10 },
+                { id: 4, name: "Supplementary", x: width * 0.55, y: height/2, r: 10 }
+            ];
+            
+            // Define central processing
+            const processing = { id: 5, name: "Processing", x: width * 0.7, y: height/2, r: 15 };
+            
+            // Define output
+            const output = { id: 6, name: "Platform", x: width * 0.85, y: height/2, r: 10 };
+            
+            // Draw connections
+            svg.selectAll('.input-lines')
+                .data(sources)
+                .enter()
+                .append('line')
+                .attr('x1', d => d.x + d.r)
+                .attr('y1', d => d.y)
+                .attr('x2', processing.x - processing.r)
+                .attr('y2', processing.y)
+                .attr('stroke', '#228B22')
+                .attr('stroke-width', 2)
+                .attr('opacity', 0.7);
+                
+            // Draw output connection
+            svg.append('line')
+                .attr('x1', processing.x + processing.r)
+                .attr('y1', processing.y)
+                .attr('x2', output.x - output.r)
+                .attr('y2', output.y)
+                .attr('stroke', '#228B22')
+                .attr('stroke-width', 3)
+                .attr('opacity', 0.7);
+            
+            // Draw nodes
+            svg.selectAll('.input-nodes')
+                .data(sources)
+                .enter()
+                .append('circle')
+                .attr('cx', d => d.x)
+                .attr('cy', d => d.y)
+                .attr('r', d => d.r)
+                .attr('fill', '#FFA500')
+                .attr('opacity', 0.8);
+                
+            // Draw processing node
+            svg.append('circle')
+                .attr('cx', processing.x)
+                .attr('cy', processing.y)
+                .attr('r', processing.r)
+                .attr('fill', '#228B22')
+                .attr('opacity', 0.8);
+                
+            // Draw output node
+            svg.append('circle')
+                .attr('cx', output.x)
+                .attr('cy', output.y)
+                .attr('r', output.r)
+                .attr('fill', '#FFFFFF')
+                .attr('opacity', 0.8);
+                
+            // Add labels
+            svg.selectAll('.source-labels')
+                .data(sources)
+                .enter()
+                .append('text')
+                .attr('x', d => d.x)
+                .attr('y', d => d.y + d.r + 15)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#FFFFFF')
+                .attr('font-size', '10px')
+                .text(d => d.name);
+                
+            // Add processing label
+            svg.append('text')
+                .attr('x', processing.x)
+                .attr('y', processing.y + processing.r + 15)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#FFFFFF')
+                .attr('font-size', '10px')
+                .text(processing.name);
+                
+            // Add output label
+            svg.append('text')
+                .attr('x', output.x)
+                .attr('y', output.y + output.r + 15)
+                .attr('text-anchor', 'middle')
+                .attr('fill', '#FFFFFF')
+                .attr('font-size', '10px')
+                .text(output.name);
+        });
+    </script>
+
+</body></html>

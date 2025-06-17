@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Challenge: Navigating India&#39;s Real Estate Market</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>
+        body {width: 1280px; height: 751px; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 751px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #003366 0%, #1a4d80 100%);
+        }
+        .accent-line {
+            background: linear-gradient(90deg, #228B22 0%, #3cb371 100%);
+        }
+        .challenge-card {
+            border-left: 4px solid #228B22;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        .challenge-icon {
+            color: #FFA500;
+        }
+        .text-shadow {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="slide gradient-bg p-10 relative overflow-hidden">
+<!-- Abstract geometric shapes for visual interest -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-opacity-10 bg-white rounded-full -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-opacity-10 bg-white rounded-full -ml-32 -mb-32"></div>
+<!-- Slide header -->
+<div class="z-10 relative">
+<h1 class="text-4xl font-bold text-white mb-2 text-shadow">The Challenge: Navigating India&#39;s Real Estate Market</h1>
+<div class="accent-line h-1 w-32 mb-8"></div>
+</div>
+<!-- Introduction text -->
+<div class="text-gray-200 mb-8 max-w-4xl relative z-10">
+<p class="text-lg">The Indian real estate market offers significant investment opportunities but presents a complex and fragmented landscape for individual investors, making informed decision-making difficult.</p>
+</div>
+<!-- Challenge cards -->
+<div class="grid grid-cols-3 gap-6 mb-8 relative z-10">
+<!-- Data Fragmentation -->
+<div class="challenge-card rounded-lg p-6">
+<div class="flex items-center mb-4">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-database challenge-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Data Fragmentation</h3>
+</div>
+<ul class="text-gray-200 space-y-2 pl-2">
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Information siloed across platforms</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Non-standardized data formats</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Time-consuming manual collection</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Difficult to verify reliability</li>
+</ul>
+</div>
+<!-- Lack of Transparency -->
+<div class="challenge-card rounded-lg p-6">
+<div class="flex items-center mb-4">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-low-vision challenge-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Lack of Transparency</h3>
+</div>
+<ul class="text-gray-200 space-y-2 pl-2">
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Project delays and false promises</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Misleading advertising practices</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Discrepancies in property details</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Eroded buyer confidence</li>
+</ul>
+</div>
+<!-- Investment Complexity -->
+<div class="challenge-card rounded-lg p-6">
+<div class="flex items-center mb-4">
+<div class="rounded-full bg-opacity-20 bg-white p-3 mr-4">
+<i class="fas fa-chart-line challenge-icon text-2xl"></i>
+</div>
+<h3 class="text-white text-xl font-semibold">Investment Complexity</h3>
+</div>
+<ul class="text-gray-200 space-y-2 pl-2">
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Limited liquidity compared to other assets</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Market fluctuations and vacancies</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Contractual and legal complications</li>
+<li><i class="fas fa-angle-right text-green-400 mr-2"></i>Difficulty identifying responsible investments</li>
+</ul>
+</div>
+</div>
+<!-- Visual representation of market fragmentation -->
+<div class="relative z-10 flex justify-center mb-6">
+<div class="h-16 w-full max-w-4xl" id="fragmentation-visual"></div>
+</div>
+<!-- Bottom summary -->
+<div class="bg-white bg-opacity-10 p-5 rounded-lg backdrop-filter backdrop-blur-sm max-w-4xl mx-auto relative z-10">
+<p class="text-white text-center text-lg">
+<i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                Individual investors need a unified platform that addresses these challenges by providing reliable data, transparent processes, and simplified investment analytics.
+            </p>
+</div>
+<!-- Slide number -->
+<div class="absolute bottom-6 right-10 text-gray-300 text-sm">
+            2/16
+        </div>
+</div>
+<script>
+        // D3.js visualization for market fragmentation
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = document.getElementById('fragmentation-visual').clientWidth;
+            const height = document.getElementById('fragmentation-visual').clientHeight;
+            
+            const svg = d3.select('#fragmentation-visual')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+            
+            // Generate random fragments to represent market fragmentation
+            const fragmentCount = 40;
+            const fragments = Array.from({ length: fragmentCount }, (_, i) => ({
+                id: i,
+                x: Math.random() * width,
+                y: height / 2 + (Math.random() * 20 - 10),
+                width: Math.random() * 30 + 10,
+                opacity: Math.random() * 0.7 + 0.3
+            }));
+            
+            // Create visual fragments
+            svg.selectAll('rect')
+                .data(fragments)
+                .enter()
+                .append('rect')
+                .attr('x', d => d.x)
+                .attr('y', d => d.y)
+                .attr('width', d => d.width)
+                .attr('height', 4)
+                .attr('rx', 2)
+                .attr('fill', (d, i) => {
+                    const colors = ['#228B22', '#FFA500', '#FFFFFF'];
+                    return colors[i % 3];
+                })
+                .attr('opacity', d => d.opacity);
+        });
+    </script>
+
+</body></html>
